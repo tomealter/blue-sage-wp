@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'SixCaps';
+  src: url('../fonts/SixCaps.eot?#iefix') format('embedded-opentype'),  url('../fonts/SixCaps.woff') format('woff'), url('../fonts/SixCaps.ttf')  format('truetype'), url('../fonts/SixCaps.svg#SixCaps') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$base-font: 'Poppins', 'helvetica', sans-serif;
+$header-font: 'SixCaps', serif;
+
+// Font Sizes
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$base-font-size: 20px;
+$font-size-md: 28px;
+$font-size-lg: 36px;
+$font-size-xl: 45px;
+$font-size-xxl: 60px;
+$font-size-xxxl: 100px;
+
+// Line Height
+$line-height-sm: 1.2;
+$line-height-md: 1.6;
+$line-height-lg: 2;

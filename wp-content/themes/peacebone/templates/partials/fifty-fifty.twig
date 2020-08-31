@@ -1,0 +1,12 @@
+<div class="fifty-fifty">
+  <div class="fifty-fifty__row">
+    {% if fifty_fifty_image_src %}
+      <div class="fifty-fifty__image">
+        <img src="{{ fifty_fifty_image_src }}" alt="{{ fifty_fifty_image_alt }}"></div>
+    {% endif %}
+    <div class="fifty-fifty__content">
+      <h2 class="fifty-fifty__title">{{ fifty_fifty_title }}</h2>
+      <div class="fifty-fifty__summary">{{ fifty_fifty_summary }}</div>
+    </div>
+  </div>
+</div>

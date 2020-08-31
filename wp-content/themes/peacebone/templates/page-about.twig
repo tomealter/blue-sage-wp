@@ -1,0 +1,47 @@
+{% embed "base.twig" with {
+  body_class: 'page--about'
+}%}
+  {% block content %}
+      
+    {# Page Header #}
+    <div class="l-project__title">
+      {% include "partials/page-header.twig" with {
+        page_header_title: post.title,
+        page_header_image: Image(post.page_header_image)|resize(1200, 300, 'center')
+      }%}
+    </div>
+
+    {# Sidebar Layout #}
+    <div class="l-constrain l-constrain--sm">
+      <div class="l-sidebar">
+        <div class="l-sidebar__content">
+          {{ post.get_field('body') }}
+        </div>
+        {% if post.about_image %}
+          <div class="l-sidebar__aside">
+            {% set image = Image(post.about_image) %}
+            <div class="border-image">
+              <img src="{{ image.src|resize(600) }}" alt="{{ image.alt }}">
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {# Testimonials #}
+    {% if post.testimonial_list %}
+      {% embed "partials/section.twig" with {
+        section_title: 'Testimonials',
+        has_constrain: true,
+        constrain_classes: 'l-constrain--sm'
+      }%}
+        {% block content %}
+          {% for item in post.meta('testimonial_list') %}
+            <div class="testimonial">{{ item.testimonial }}</div>
+          {% endfor %}
+        {% endblock content %}
+      {% endembed  %}
+    {% endif %}
+
+  {% endblock content %}
+{% endembed  %}

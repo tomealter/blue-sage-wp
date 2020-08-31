@@ -1,0 +1,33 @@
+{
+  "name": "peacebone",
+  "version": "1.0.0",
+  "description": "Wp theme",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomealter/peacebone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomealter/peacebone/issues"
+  },
+  "homepage": "https://github.com/tomealter/peacebone#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "breakpoint-sass": "^2.7.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.14.1"
+  }
+}

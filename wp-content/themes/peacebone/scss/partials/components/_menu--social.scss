@@ -1,0 +1,46 @@
+.menu--social {
+  display: flex;
+
+  .menu__link {
+    @include image-replace-alt(40px, 40px);
+    margin-left: .25rem;
+    position: relative;
+
+    &::before,
+    &::after {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 250ms ease-out;
+      width: 100%;
+    }
+
+    &::before { opacity: 1; }
+    &::after { opacity: 0; }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover,
+    &:focus {
+      &::before { opacity: 0; }
+      &::after { opacity: 1; }
+    }
+  }
+}
+
+$social-map: 'twitter', 'facebook', 'instagram';
+
+@each $social in $social-map {
+  .menu__link.#{$social} {
+    &::before { @include svg-background(social-#{$social}-white); }
+    &::after { @include svg-background(social-#{$social}-green); }
+  }
+}

@@ -1,0 +1,15 @@
+$bp-header: 900px;
+
+.l-header {
+  padding: 1.5rem 0;
+}
+
+.l-header__row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  body.page--homepage & {
+    justify-content: center;
+  }
+}

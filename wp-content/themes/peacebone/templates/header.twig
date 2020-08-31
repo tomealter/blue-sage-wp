@@ -1,0 +1,19 @@
+<div class="l-header">
+  <div class="l-constrain">
+    <div class="l-header__row">
+      {% include "partials/site-name.twig" with {
+        url: site.url,
+        site_name: site.name
+      }%}
+      <nav class="l-header__menu" role="navigation">
+        {% include "menu.twig" with {
+          menu: main_menu.get_items,
+          menu_name: 'main'
+        }%}
+      </nav>
+      <a href="#" class="mobile-menu-button">
+        <div class="mobile-menu-button__bar"></div>
+      </a>
+    </div>
+  </div>
+</div>

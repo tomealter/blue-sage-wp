@@ -1,0 +1,32 @@
+.page-title {
+  margin: $base-spacing 0;
+
+  @include breakpoint(800px) {
+    margin: $spacing-md 0;
+  }
+
+  &::after {
+    background-color: $green;
+    content: '';
+    display: block;
+    height: 8px;
+    position: relative;
+    width: 150px;
+
+    @include breakpoint(800px) {
+      width: 250px;
+    }
+  }
+}
+
+.page-title__title {
+  font-size: $font-size-xl;
+  font-weight: 400;
+  letter-spacing: 5.5px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  @include breakpoint(800px) {
+    font-size: $font-size-xxl;
+  }
+}

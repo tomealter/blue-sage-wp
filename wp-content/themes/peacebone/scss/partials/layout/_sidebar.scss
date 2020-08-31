@@ -1,0 +1,28 @@
+$bp-sidebar: 900px;
+
+.l-sidebar {
+  margin-bottom: $spacing-lg;
+
+  @include breakpoint($bp-sidebar) {
+    display: flex;
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.l-sidebar__main {
+
+  @include breakpoint($bp-sidebar) {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+.l-sidebar__aside {
+  @include breakpoint($bp-sidebar) {
+    flex-basis: 35%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 5rem;
+  }
+}

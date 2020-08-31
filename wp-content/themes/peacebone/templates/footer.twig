@@ -1,0 +1,25 @@
+<footer class="l-footer">
+  <div class="l-constrain">
+    <div class="l-footer__row">
+      <div class="l-footer__left">
+        <div class="l-footer__logo">
+          {% include "partials/site-name.twig" with {
+            url: site.url,
+            site_name: site.name
+          }%}
+        </div>
+        <nav class="menu--social">
+          <a href="#" class="menu__link instagram">Instagram</a>
+          <a href="#" class="menu__link twitter">Twitter</a>
+          <a href="#" class="menu__link facebook">Facebook</a>
+        </nav>
+      </div>
+      <div class="l-footer__right">
+        <div class="ta">
+          <div class="ta__text">Website By<br>Tommy Alter</div>
+          <div class="ta__logo">Tommy Alter Logo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

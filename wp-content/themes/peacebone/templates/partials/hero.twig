@@ -1,0 +1,12 @@
+<div class="hero">
+  <div class="hero__images">
+    {% for image in hero_images %}
+      {% if loop.first %}
+        <img class="hero__image is-active" src="{{ Image(image.hero_image).src|resize(1600, 700, 'center') }}" alt="{{ image.hero_image.alt }}"/>
+      {% else %}
+        <img class="hero__image" data-src="{{ Image(image.hero_image).src|resize(1600, 700, 'center') }}" alt="{{ image.hero_image.alt }}" />
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="hero__logo">Blue Sage Designs</div>
+</div>

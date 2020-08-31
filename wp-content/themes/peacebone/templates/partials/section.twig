@@ -1,0 +1,23 @@
+<div class="l-section {{ modifier_classes }}">
+  {% if has_constrain %}
+    <div class="l-constrain {{ constrain_classes }}">
+  {% endif %}
+  {% if section_title or section_link_url %}
+    <div class="l-section__header">
+      {% if section_title %}
+        <h2 class="l-section__title">{{ section_title }}</h2>
+      {% endif %}
+      {% if section_link_url %}
+        <a href="{{ section_link_url }}" class="l-section__link arrow-link">{{ section_link_text }}</a>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="l-section__content">
+    {% block content %}
+      {{ section_content }}
+    {% endblock content %}
+  </div>
+  {% if has_constrain %}
+    </div>
+  {% endif %}
+</div>

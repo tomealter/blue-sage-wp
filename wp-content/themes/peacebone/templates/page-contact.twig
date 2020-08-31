@@ -1,0 +1,31 @@
+{% embed "base.twig" with {
+  body_class: 'page--about'
+}%}
+  {% block content %}
+      
+    {# Page Header #}
+    <div class="l-project__title">
+      {% include "partials/page-header.twig" with {
+        page_header_title: post.title,
+        page_header_image: Image(post.header_image)|resize(1200, 300, 'center')
+      }%}
+    </div>
+
+    {# Intro #}
+    {% if post.intro %}
+      {% include "partials/section.twig" with {
+        section_title: false,
+        section_content: post.get_field('intro'),
+        has_constrain: true,
+        constrain_classes: 'l-constrain--sm'
+      }%}
+    {% endif %}
+
+    {# Sidebar Layout #}
+    <div class="l-constrain l-constrain--sm"> 
+      {{ post.contact_form|shortcodes }}
+    </div>
+
+
+  {% endblock content %}
+{% endembed  %}

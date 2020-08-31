@@ -1,0 +1,15 @@
+.l-project__content {
+  margin-bottom: $spacing-md;
+
+  @include breakpoint(800px) {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.l-project__gallery {
+  margin-bottom: $spacing-lg;
+
+  @include breakpoint(800px) {
+    margin-bottom: $spacing-xl;
+  }
+}

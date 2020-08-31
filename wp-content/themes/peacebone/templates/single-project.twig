@@ -1,0 +1,33 @@
+{% embed "base.twig" %}
+  {% block content %}
+    <div class="l-project">
+        
+      {# Page Title #}
+      <div class="l-project__title">
+        <div class="l-constrain l-constrain--narrow">
+          {% include "partials/page-title.twig" with {
+            page_title: post.title
+          }%}
+        </div>
+      </div>
+
+      {# WYSIWYG Content #}
+      <div class="l-project__content">
+        <div class="l-constrain l-constrain--narrow">
+          {{ post.get_field('description') }}
+        </div>
+      </div>
+
+      {# Gallery #}
+      <div class="l-project__gallery">
+        <div class="l-constrain">
+          {% include "partials/gallery.twig" with {
+            gallery_first: Image(post.image_gallery.0),
+            gallery_images: post.image_gallery
+          }%}
+        </div>
+      </div>
+
+    </div>
+  {% endblock content %}
+{% endembed  %}

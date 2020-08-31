@@ -1,0 +1,32 @@
+<!-- Begin output of "page-projects.twig" -->
+{% embed "base.twig" with {
+  body_class: 'page--portfolio'
+}%}
+
+  {% block content %}
+
+    {# Page Header #}
+    {% include "partials/page-header.twig" with {
+      page_header_title: post.title,
+      page_header_image: 'http://picsum.photos/1600/500?image=778'
+    }%}
+
+    {# Projects Grid #}
+    <div class="l-constrain">
+      <div class="flex-grid flex-grid--3col">
+        {% for project in projects %}
+          <div class="flex-column">
+            {% include "partials/card.twig" with {
+              card_image_src: project.thumbnail.src|resize(600, 450, 'center'),
+              card_image_alt: project.thumbnail.alt,
+              card_title: project.title,
+              card_url: project.link
+            }%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  {% endblock content %}
+
+{% endembed %}

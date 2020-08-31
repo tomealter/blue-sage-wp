@@ -1,0 +1,66 @@
+.mobile-menu-button {
+  display: block;
+  height: 50px;
+  position: relative;
+  width: 50px;
+  z-index: 10;
+
+  @include breakpoint($bp-mobile-menu) {
+    display: none;
+  }
+}
+
+.mobile-menu-button__bar {
+  background-color: #333;
+  height: 6px;
+  width: 50px;
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 150ms ease-out;
+  z-index: 10;
+  
+  &:before,
+  &:after {
+    height: 6px;
+    display: block;
+    content: '';
+    background-color: #333;
+    width: 50px;
+    position: relative;
+    animation-duration: .5s;
+    transition: top 150ms ease-in 150ms, transform 150ms ease-out;
+  }
+  
+  &:before {
+    top: -15px;
+    animation-duration: .5s;
+  }
+  
+  &:after {
+    top: 9px;
+    animation-duration: .5s;
+  }
+  
+  .is-active & {
+    background-color: #fff;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 150ms ease-out 150ms;
+    
+    &:before {
+      background-color: #fff;
+      top: 0;
+      transition: top 150ms ease-in, transform 150ms ease-out 150ms;
+      //transform: rotate(45deg);
+    }
+    
+    &:after {
+      background-color: #fff;
+      top: -6px;
+      transform: rotate(-90deg);
+      transition: top 150ms ease-in, transform 150ms ease-out 150ms;
+    }
+  }
+}

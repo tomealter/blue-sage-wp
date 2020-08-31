@@ -1,0 +1,18 @@
+.l-constrain {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1em;
+
+  &.l-constrain--sm {
+    max-width: 1000px;
+  }
+
+  &.l-constrain--narrow {
+    max-width: 850px; 
+  }
+
+  //kill padding incase an l-constrain falls inside another
+  .l-constrain {
+    padding: 0;
+  }
+} 

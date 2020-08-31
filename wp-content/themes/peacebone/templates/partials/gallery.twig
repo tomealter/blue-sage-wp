@@ -1,0 +1,18 @@
+<div class="gallery">
+  <div class="gallery__main">
+    <img src="{{ gallery_first.src|resize(1200, 670, 'center') }}" alt="{{ gallery_first.alt }}">
+  </div>
+  <div class="gallery__images">
+    {% for item in gallery_images %}
+      {% set image = Image(item) %}
+      <a 
+        href="#"
+        class="gallery__thumbnail{% if loop.first %} is-active{% endif %}"
+        data-src="{{ image.src|resize(1200, 670, 'center') }}"
+        data-alt="{{ image.alt }}"
+      >
+        <img src="{{ image.src|resize(150, 150, 'center') }}" alt="{{ image.alt }}">
+      </a>
+    {% endfor %}
+  </div>
+</div>

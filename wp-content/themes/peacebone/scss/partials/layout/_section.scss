@@ -1,0 +1,30 @@
+.l-section {
+  margin-bottom: $spacing-md;
+  position: relative;
+
+  @include breakpoint($bp-tablet) {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.l-section__header {
+  margin-bottom: $spacing-md;
+
+  @include breakpoint($bp-tablet-lg) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.l-section__title {
+  margin-bottom: 0;
+}
+
+.l-section__link {
+  margin-top: $spacing-xs;
+
+  @include breakpoint($bp-tablet) {
+    margin-top: 0;
+  }
+}

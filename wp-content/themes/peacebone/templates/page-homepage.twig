@@ -1,0 +1,54 @@
+{% embed "base.twig" with {
+  body_class: 'page--homepage'
+}%}
+
+  {% block content %}
+
+    {% include "partials/hero.twig" with {
+      hero_images: post.meta('hero_images')
+    }%}
+
+    {# Recent Projects Grid #}
+    {% embed "partials/section.twig" with {
+      section_title: 'Recent Projects',
+      has_constrain: true,
+      section_link_url: '/projects',
+      section_link_text: 'All Projects'
+    }%}
+      {% block content %}
+        <div class="flex-grid flex-grid--3col">
+          {% for project in Post(post.recent_projects) %}
+            {% include "partials/card.twig" with {
+              card_image_src: project.thumbnail.src|resize(600, 450, 'center'),
+              card_image_alt: project.thumbnail.alt,
+              card_title: project.title,
+              card_url: project.link
+            }%}
+          {% endfor %}
+        </div>
+      {% endblock content %}
+    {% endembed %}
+
+    {# Services Grid #}
+    {% embed "partials/section.twig" with {
+      section_title: 'Services',
+      has_constrain: true,
+      section_link_url: '/services',
+      section_link_text: 'Learn More'
+    }%}
+      {% block content %}
+        <div class="flex-grid flex-grid--3col">
+          {% for service in post.meta('services') %}
+            {% include "partials/card.twig" with {
+              card_image_src: Image(service.service_image).src|resize(600, 450, 'center'),
+              card_image_alt: Image(service.service_image).alt,
+              card_title: service.service_title,
+              card_url: '#'
+            }%}
+          {% endfor %}
+        </div>
+      {% endblock content %}
+    {% endembed %}
+
+  {% endblock content %}
+{% endembed  %}

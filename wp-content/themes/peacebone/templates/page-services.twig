@@ -1,0 +1,36 @@
+{% embed "base.twig" with {
+  body_class: 'page--about'
+}%}
+  {% block content %}
+      
+    {# Page Header #}
+    <div class="l-project__title">
+      {% include "partials/page-header.twig" with {
+        page_header_title: post.title,
+        page_header_image: Image(post.page_header_image)|resize(1200, 300, 'center')
+      }%}
+    </div>
+
+    {# Body #}
+    {% include "partials/section.twig" with {
+      section_title: false,
+      has_constrain: true,
+      constrain_classes: 'l-constrain--sm',
+      section_content: post.get_field('services_body')
+    }%}
+
+    {# Services #}
+    <div class="l-constrain">
+      {% for service in post.meta('services') %}
+        {% include "partials/fifty-fifty.twig" with {
+          fifty_fifty_image_src: Image(service.image).src|resize(800, 600, 'center'),
+          fifty_fifty_image_alt: service.image.alt,
+          fifty_fifty_title: service.title,
+          fifty_fifty_summary: service.summary
+        }%}
+      {% endfor %}
+    </div>
+
+
+  {% endblock content %}
+{% endembed  %}

@@ -1,0 +1,65 @@
+.hero {
+  display: block;
+  height: 400px;
+  margin-bottom: $spacing-xl;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  &::after {
+    background-color: rgba(0,0,0,0.6);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  @include breakpoint($bp-tablet) {
+    height: 550px;
+  }
+
+  @include breakpoint($bp-tablet-lg) {
+    height: 700px;
+  }
+}
+
+.hero__logo {
+  @include image-replace(270px, 120px);
+  @include svg-background(blue-sage-logo--large);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  @include breakpoint($bp-tablet) {
+    @include image-replace(450px, 200px);
+  }
+
+  @include breakpoint($bp-tablet-lg) {
+    @include image-replace(600px, 240px);
+  }
+}
+
+.hero__image {
+  display: block;
+  height: 100%;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 1s ease-out;
+  width: 100%;
+  z-index: -1;
+
+  &.is-active {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,39 @@
+.card__link {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.05);
+    }
+
+    .card__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.card__image {
+  margin-bottom: $spacing-sm;
+  overflow: hidden;
+
+  img {
+    transform: scale(1);
+    transition: transform 1500ms ease-out;
+  }
+}
+
+.card__title {
+  color: $black;
+  display: inline-block;
+  font-size: $base-font-size;
+  font-weight: 700;
+  letter-spacing: 3px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 200ms ease-out;
+}

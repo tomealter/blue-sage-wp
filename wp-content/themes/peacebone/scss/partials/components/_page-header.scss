@@ -1,0 +1,45 @@
+.page-header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: $spacing-lg;
+
+  @include breakpoint($bp-tablet-lg) {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.page-header__title {
+  background-color: #fff;
+  display: inline-block;
+  font-family: $header-font;
+  font-size: $font-size-xxl;
+  font-weight: 400;
+  letter-spacing: 6px;
+  margin: $base-spacing 0 0 0;
+  padding: $spacing-xs $base-spacing;
+  position: relative;
+  top: 2rem;
+
+  @include breakpoint($bp-tablet-lg) {
+    font-size: $font-size-xxxl;
+    letter-spacing: 10px;
+    padding: $spacing-sm $spacing-md;
+    top: 3.5rem;
+  }
+
+  &::before {
+    background-color: $green;
+    content: '';
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include breakpoint($bp-tablet-lg) {
+      height: 6px;
+    }
+  }
+}

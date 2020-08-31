@@ -1,0 +1,19 @@
+.testimonial {
+  margin-bottom: $spacing-md;
+  padding-left: 3.25rem;
+  position: relative;
+
+  &::before {
+    @include svg-background(quote);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 35px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 44px;
+  }
+}

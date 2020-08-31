@@ -1,0 +1,22 @@
+.site-name {
+  @include image-replace(150px, 50px);
+  @include svg-background(blue-sage-logo);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: constrain;
+  display: block;
+
+  @include breakpoint(600px) {
+    @include image-replace(180px, 60px);
+  }
+
+  .l-footer & {
+    @include image-replace(145px, 50px);
+    @include svg-background(blue-sage-logo--white);
+    display: block !important;
+  }
+
+  .page--homepage & {
+    display: none;
+  }
+}
