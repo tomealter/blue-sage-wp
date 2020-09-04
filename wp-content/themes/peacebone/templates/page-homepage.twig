@@ -12,7 +12,7 @@
     {% embed "partials/section.twig" with {
       section_title: 'Recent Projects',
       has_constrain: true,
-      section_link_url: '/projects',
+      section_link_url: site.url ~ '/portfolio',
       section_link_text: 'All Projects'
     }%}
       {% block content %}
@@ -33,7 +33,7 @@
     {% embed "partials/section.twig" with {
       section_title: 'Services',
       has_constrain: true,
-      section_link_url: '/services',
+      section_link_url: site.url ~ '/services',
       section_link_text: 'Learn More'
     }%}
       {% block content %}
