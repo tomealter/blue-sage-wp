@@ -5,7 +5,7 @@
   {% block content %}
 
     {% include "partials/hero.twig" with {
-      hero_images: post.meta('hero_images')
+      hero_images: post.hero_images
     }%}
 
     {# Recent Projects Grid #}

@@ -1,10 +1,11 @@
 <div class="hero">
   <div class="hero__images">
-    {% for image in hero_images %}
+    {% for item in hero_images %}
+      {% set image = Image(item) %}
       {% if loop.first %}
-        <img class="hero__image is-active" src="{{ Image(image.hero_image).src|resize(1600, 700, 'center') }}" alt="{{ image.hero_image.alt }}"/>
+        <img class="hero__image is-active" src="{{ image.src|resize(1600, 700, 'center') }}" alt="{{ image.alt }}"/>
       {% else %}
-        <img class="hero__image" data-src="{{ Image(image.hero_image).src|resize(1600, 700, 'center') }}" alt="{{ image.hero_image.alt }}" />
+        <img class="hero__image" data-src="{{ image.src|resize(1600, 700, 'center') }}" alt="{{ image.alt }}" />
       {% endif %}
     {% endfor %}
   </div>
