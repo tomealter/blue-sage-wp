@@ -76,11 +76,19 @@ jQuery(document).ready(function ($) {
   /*********************************************/
   // Mobile Menu
   /*********************************************/
+  const mainMenu = $('.l-header .menu--main');
   const mobileMenuButton = $('.mobile-menu-button');
   const mobileMenu = $('.mobile-menu');
   const mobileMenuLinks = $('.mobile-menu .menu--main');
   const mobileMenuLink = $('.mobile-menu .menu__link');
 
+  // Clone main menu into mobile menu
+  if (mainMenu.length) {
+    const menuClone = mainMenu.clone();
+    mobileMenu.append(menuClone);
+  }
+
+  // Activate menu on button click
   mobileMenuButton.on('click', function (e) {
     e.preventDefault();
 

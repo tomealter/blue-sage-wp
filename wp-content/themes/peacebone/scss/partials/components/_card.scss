@@ -1,3 +1,7 @@
+.card {
+  margin-bottom: $base-spacing;
+}
+
 .card__link {
   align-items: center;
   display: flex;
@@ -31,7 +35,7 @@
   display: inline-block;
   font-size: $base-font-size;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   position: relative;
   text-align: center;
   text-transform: uppercase;

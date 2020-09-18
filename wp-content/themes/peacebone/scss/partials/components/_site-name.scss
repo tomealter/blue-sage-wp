@@ -17,6 +17,8 @@
   }
 
   .page--homepage & {
-    display: none;
+    @include breakpoint($bp-mobile-menu) {
+      display: none;
+    }
   }
 }

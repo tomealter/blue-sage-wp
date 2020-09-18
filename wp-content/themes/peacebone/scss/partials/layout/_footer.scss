@@ -67,6 +67,7 @@ $bp-footer: 600px;
   padding: .35rem .5rem .35rem 0;
   text-align: right;
   text-transform: uppercase;
+  width: 105px;
 
   @include breakpoint($bp-footer) {
     padding: .5rem .5rem .5rem 0;
