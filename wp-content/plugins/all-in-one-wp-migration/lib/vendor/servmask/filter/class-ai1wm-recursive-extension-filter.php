@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2020 ServMask Inc.
+ * Copyright (C) 2014-2018 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,19 +23,15 @@
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( 'Kangaroos cannot jump here' );
-}
-
 class Ai1wm_Recursive_Extension_Filter extends RecursiveFilterIterator {
 
 	protected $include = array();
 
 	public function __construct( RecursiveIterator $iterator, $include = array() ) {
 		parent::__construct( $iterator );
-		if ( is_array( $include ) ) {
-			$this->include = $include;
-		}
+
+		// Set include filter
+		$this->include = $include;
 	}
 
 	public function accept() {
