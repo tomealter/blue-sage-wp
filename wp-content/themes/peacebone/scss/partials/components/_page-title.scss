@@ -22,11 +22,12 @@
 .page-title__title {
   font-size: $font-size-xl;
   font-weight: 400;
-  letter-spacing: 5.5px;
+  letter-spacing: 3px;
   margin-bottom: 1rem;
   text-transform: uppercase;
 
   @include breakpoint(800px) {
     font-size: $font-size-xxl;
+    letter-spacing: 5.5px;
   }
 }
