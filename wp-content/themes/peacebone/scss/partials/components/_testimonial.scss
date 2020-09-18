@@ -1,7 +1,11 @@
 .testimonial {
-  margin-bottom: $spacing-md;
+  margin-bottom: $base-spacing;
   padding-left: 3.25rem;
   position: relative;
+
+  @include breakpoint($bp-tablet-lg) {
+    margin-bottom: $spacing-md;
+  }
 
   &::before {
     @include svg-background(quote);
@@ -10,10 +14,16 @@
     background-size: contain;
     content: '';
     display: inline-block;
-    height: 35px;
+    height: 30px;
     left: 0;
     position: absolute;
     top: 3px;
-    width: 44px;
+    width: 40px;
+
+    @include breakpoint($bp-tablet-lg) {
+      height: 35px;
+      margin-bottom: $spacing-md;
+      width: 44px;
+    }
   }
 }

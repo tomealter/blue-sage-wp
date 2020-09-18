@@ -1,10 +1,10 @@
 $bp-header: 900px;
 
 .l-header {
-  padding: 1rem 0;
+  padding: $spacing-xs 0;
 
   @include breakpoint($bp-mobile-menu) {
-    padding: 1.5rem 0;
+    padding: $base-spacing 0;
   }
 }
 

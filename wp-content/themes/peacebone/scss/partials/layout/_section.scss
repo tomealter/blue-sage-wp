@@ -8,12 +8,13 @@
 }
 
 .l-section__header {
-  margin-bottom: $spacing-md;
+  margin-bottom: $base-spacing;
 
   @include breakpoint($bp-tablet-lg) {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin-bottom: $spacing-md;
   }
 }
 

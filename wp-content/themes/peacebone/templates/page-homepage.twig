@@ -43,7 +43,7 @@
               card_image_src: Image(service.service_image).src|resize(600, 450, 'center'),
               card_image_alt: Image(service.service_image).alt,
               card_title: service.service_title,
-              card_url: '#'
+              card_url: site.url ~ '/services'
             }%}
           {% endfor %}
         </div>
