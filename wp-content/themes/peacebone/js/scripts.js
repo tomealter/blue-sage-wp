@@ -99,7 +99,7 @@ jQuery(document).ready(function ($) {
     else {
       // $(this).addClass('is-active');
       openMobileMenu();
-      TweenMax.staggerFrom(mobileMenuLink, .2, {
+      TweenMax.staggerFrom($('.mobile-menu .menu__link'), .2, {
         x: '-=50',
         opacity: '0'
       }, 0.1);

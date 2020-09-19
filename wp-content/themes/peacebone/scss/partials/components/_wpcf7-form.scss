@@ -14,9 +14,14 @@
   font-size: $font-size-xs;
   height: 50px;
   padding: 0 .5rem;
+  width: 100%;
 
   &:focus {
     border-color: $green;
+  }
+
+  @include breakpoint($bp-tablet) {
+    max-width: 400px;
   }
 }
 
