@@ -1,9 +1,9 @@
-<div class="cta">
+<div class="cta" style="background-image: url({{ cta_image }});">
   <div class="l-constrain l-constrain--sm">
     <div class="cta__row">
-      <div class="cta__text">Ready to design something beautiful?</div>
+      <div class="cta__text">{{ cta_text }}</div>
       <div class="cta__button">
-        <a href="{{ site.url ~ '/contact' }}" class="button">Contact Us</a>
+        <a href="{{ cta_button_url }}" class="button">{{ cta_button_text }}</a>
       </div>
     </div>
   </div>

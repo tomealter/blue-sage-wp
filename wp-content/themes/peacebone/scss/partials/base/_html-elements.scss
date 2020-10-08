@@ -15,6 +15,13 @@ body {
 }
 
 a {
+  color: $green;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 
   &.arrow-link {
     color: $black;

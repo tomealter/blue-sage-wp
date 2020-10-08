@@ -82,3 +82,15 @@ add_action( 'init', function() {
 }, 99);
 
 //code.jquery.com/jquery-1.12.4.min.js
+
+// Options Page
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
+add_filter( 'timber_context', 'mytheme_timber_context'  );
+
+function mytheme_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}

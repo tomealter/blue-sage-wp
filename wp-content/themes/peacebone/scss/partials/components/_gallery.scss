@@ -2,10 +2,6 @@
 
 }
 
-.gallery__main {
-  margin-bottom: .7rem;
-}
-
 .gallery__images {
   display: flex;
   margin-left: -.35rem;
@@ -19,7 +15,7 @@
   flex-basis: 20%;
   max-width: 20%;
 
-  @include breakpoint(600px) {
+  @include breakpoint(600px) {git 
     flex-basis: percentage(1/7);
     max-width: percentage(1/7);
   }
