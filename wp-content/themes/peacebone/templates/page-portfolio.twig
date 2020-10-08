@@ -8,7 +8,7 @@
     {# Page Header #}
     {% include "partials/page-header.twig" with {
       page_header_title: post.title,
-      page_header_image: 'http://picsum.photos/1600/500?image=778'
+      page_header_image: Image(post.page_header_image)|resize(1200, 300, 'center')
     }%}
 
     {# Projects Grid #}

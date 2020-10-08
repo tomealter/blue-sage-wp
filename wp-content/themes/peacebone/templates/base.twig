@@ -15,9 +15,21 @@
 			{% endblock content %}
 		</section>
 
-		{% include "partials/cta.twig" %}
+    {% if options.cta_text is not empty %}
+      {% include "partials/cta.twig" with {
+        cta_image: Image(options.cta_image).src|resize(1200, 350, 'center'),
+        cta_text: options.cta_text,
+        cta_button_url: options.cta_button['url'],
+        cta_button_text: options.cta_button['title']
+      }%}
+    {% endif %}
+    
+	
+
 		{% include "footer.twig" %}
+
 		<div class="mobile-menu"></div>
+
 		{{ function('wp_footer') }}
 	</body>
 </html>

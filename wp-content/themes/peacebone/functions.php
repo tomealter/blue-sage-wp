@@ -65,7 +65,9 @@ class StarterSite extends TimberSite {
 function add_theme_scripts() {
 	// wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/fonts.css', array(), '1.1', 'all');
 	wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/styles.css', array(), '1.1', 'all');
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/scripts.js', array ( 'jquery' ), 1.1, true);
+	wp_enqueue_script( 'gallery', get_template_directory_uri() . '/js/gallery.js', array ( 'jquery' ), 1.1, true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
@@ -82,3 +84,15 @@ add_action( 'init', function() {
 }, 99);
 
 //code.jquery.com/jquery-1.12.4.min.js
+
+// Options Page
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
+add_filter( 'timber_context', 'mytheme_timber_context'  );
+
+function mytheme_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}

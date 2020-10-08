@@ -13,11 +13,13 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 200ms ease-out;
   z-index: 1;
 
   &:hover,
   &:focus {
     box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    text-decoration: none;
 
     &::before {
       left: 0;

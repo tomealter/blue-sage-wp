@@ -1,0 +1,53 @@
+.modal {
+  background-color: rgba(#fff, .95);
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 250ms ease-out;
+  width: 100%;
+  z-index: 99;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+.modal__content {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: $spacing-lg $spacing-md $spacing-md $spacing-md;
+
+  @include breakpoint($bp-tablet-lg) {
+    padding: 5rem;
+  }
+}
+
+.modal__close {
+  @include image-replace(40px, 40px);
+  @include svg-background(close);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  opacity: .4;
+  position: absolute;
+  right: .75rem;
+  top: .75rem;
+  transition: opacity 250ms ease-out;
+  z-index: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include breakpoint($bp-tablet-lg) {
+    @include image-replace(50px, 50px);
+    right: 1.5rem;
+    top: 1.5rem;
+  }
+}
