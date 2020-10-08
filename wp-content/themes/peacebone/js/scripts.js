@@ -20,22 +20,6 @@ jQuery(document).ready(function ($) {
     TO = setTimeout(resizeStuff, 200);
   }).resize();
 
-  
-  /*********************************************/
-  // Gallery
-  /*********************************************/
-  const gallery = $('.gallery');
-  const galleryLink = $('.gallery__thumbnail');
-  const galleryMain = $('.gallery__main img');
-
-  galleryLink.on('click', function (e) {
-    e.preventDefault();
-    galleryMain.attr('src', $(this).attr('data-src'));
-    galleryMain.attr('alt', $(this).attr('data-alt'));
-    galleryLink.removeClass('is-active');
-    $(this).addClass('is-active');
-  });
-
 
   /*********************************************/
   // Hero

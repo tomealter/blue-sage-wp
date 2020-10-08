@@ -2,15 +2,24 @@
   <div class="gallery__images">
     {% for item in gallery_images %}
       {% set image = Image(item) %}
-      <a 
-        href="#"
-        class="gallery__thumbnail{% if loop.first %} is-active{% endif %}"
-        data-src="{{ image.src|resize(1200) }}"
-        data-alt="{{ image.alt }}"
-      >
+      <a href="#" class="gallery__thumbnail" data-index="{{ loop.index }}">
         <img src="{{ image.src|resize(500, 500, 'center') }}" alt="{{ image.alt }}">
       </a>
     {% endfor %}
   </div>
-  
+  {# Modal #}
+  <div class="modal">
+    <div class="modal__content">
+      {# Slider #}
+      <div class="slider">
+        {% for item in gallery_images %}
+          {% set image = Image(item) %} 
+          <div class="slider__image" data-index="{{ loop.index }}">
+            <img data-lazy="{{ image.src|resize(1400) }}" alt="{{ image.alt }}">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <a href="#" class="modal__close">Close Modal</a>
+  </div>
 </div>
